@@ -8,7 +8,7 @@ El propósito del presente estándar es establecer un conjunto de reglas y guía
 
 ### Propósito general
 
-El propósito general del presente trabajo es crear un estándar de codificación para el lenguaje de programación C# que sirva como guía para el equipo durante la construcción del proyecto de software “NOMBRE DEL PROYECTO”, asimismo, que permita a externos entender las reglas de estilo y decisiones de construcción que se tomaron. El idioma del código será inglés.
+El propósito general del presente trabajo es crear un estándar de codificación para el lenguaje de programación C# que sirva como guía para el equipo durante la construcción del proyecto de software Financiera Independiente, asimismo, que permita a externos entender las reglas de estilo y decisiones de construcción que se tomaron. El idioma del código será inglés.
 
 ### Propósitos específicos
 * Definir reglas claras y consistentes de sintaxis, nomenclatura y estilo para la codificación.
