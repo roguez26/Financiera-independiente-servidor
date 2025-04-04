@@ -1,0 +1,145 @@
+﻿<Window x:Class="Independiente.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Independiente"
+        xmlns:p="clr-namespace:Independiente.Properties"
+        xmlns:vm="clr-namespace:Independiente.ViewModel"
+        xmlns:conv="clr-namespace:Independiente.Converters"
+        mc:Ignorable="d"
+        Title="Main"
+        Height="450"
+        Width="800"
+        WindowState="Maximized">
+
+
+    <Window.DataContext>
+        <vm:MainWindowViewModel />
+    </Window.DataContext>
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/View/ViewResources/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <conv:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+
+        </ResourceDictionary>
+    </Window.Resources>
+
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition x:Name="MenuColumn"
+                              Width="{Binding MenuWidth}" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Border CornerRadius="0, 4, 4, 0"
+                ClipToBounds="True"
+                Background="{StaticResource BackGroundBlackColor}">
+
+            <Grid>
+                <DockPanel Width="36"
+                           Height="40"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Top">
+                    <Button Style="{DynamicResource MenuBarIconStyle}"
+                            Command="{Binding ShowAndHideMenuCommand}"
+                            Width="32" />
+                </DockPanel>
+
+                <Grid x:Name="MenuGrid"
+                      Visibility="{Binding IsMenuVisible, Converter={StaticResource BoolToVisibilityConverter}}">
+                    <StackPanel VerticalAlignment="Top"
+                                Height="290"
+                                Margin="0,32,0,0">
+
+
+
+                        <DockPanel x:Name="UserData"
+                                   Width="240"
+                                   Height="70"
+                                   HorizontalAlignment="Left">
+                            <Canvas Width="32"
+                                    Height="32"
+                                    HorizontalAlignment="Left"
+                                    Margin="8, 0, -10, 10">
+                                <Viewbox Stretch="Uniform">
+                                    <Path Data="{DynamicResource UserAccountIcon}"
+                                          Fill="{StaticResource IconWhiteColor}"
+                                          Height="32"
+                                          Stretch="Fill"
+                                          Width="32" />
+                                </Viewbox>
+                            </Canvas>
+
+                            <StackPanel Width="140"
+                                        Height="50"
+                                        Margin="15">
+                                <Label  x:Name="UsernameLabel"
+                                        Foreground="White"
+                                        Padding="1"
+                                        FontWeight="Bold"
+                                        Content="{Binding User.Name}" />
+                                <Label x:Name="RoleLabel"
+                                       Foreground="White"
+                                       Padding="1"
+                                       Content="{Binding User.Role}" />
+                            </StackPanel>
+
+                            <Button Style="{DynamicResource IconButtonStyle}"
+                                    Tag="{DynamicResource ConfigurationIcon}"
+                                    Foreground="{StaticResource IconWhiteColor}"
+                                    Height="23"
+                                    Width="25"
+                                    Margin="-10"
+                                    Visibility="{Binding IsMenuVisible, Converter={StaticResource BoolToVisibilityConverter}}" />
+                        </DockPanel>
+
+
+                        <StackPanel x:Name="Options"
+                                    Height="153"
+                                    Margin="0,10,0,0"
+                                    Width="204">
+                            <Button Content="Opción 1"
+                                    Margin="0,0,0,10"
+                                    Width="200"
+                                    Style="{DynamicResource MenuBarButtonStyle}" />
+                            <Button Content="Opción 2"
+                                    Margin="0,0,0,10"
+                                    Width="200"
+                                    Style="{DynamicResource MenuBarButtonStyle}" />
+                            <Button Content="Opción 3"
+                                    Margin="0,0,0,10"
+                                    Width="200"
+                                    Style="{DynamicResource MenuBarButtonStyle}" />
+
+
+                        </StackPanel>
+                    </StackPanel>
+
+                    <DockPanel MaxHeight="70"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Bottom"
+                               Height="50"
+                               Width="200">
+                        <Button x:Name="LogOutButton"
+                                Height="30"
+                                Style="{StaticResource LogOutButtonStyle}"
+                                Command="{Binding LogoutCommand}" />
+                    </DockPanel>
+                </Grid>
+
+            </Grid>
+
+        </Border>
+        <Grid Grid.Column="1">
+
+            <Frame x:Name="PageFrame" 
+                   NavigationUIVisibility="Hidden" />
+        </Grid>
+    </Grid>
+</Window>

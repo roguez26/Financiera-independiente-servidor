@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="FinancialNameLabelGlobal" xml:space="preserve">
+    <value>Financiera Independiente</value>
+  </data>
+  <data name="WelcomeGreetingLabelLocal" xml:space="preserve">
+    <value>Bienvenido</value>
+  </data>
+  <data name="EmailAddressLabelGlobal" xml:space="preserve">
+    <value>Correo electrónico</value>
+  </data>
+  <data name="PasswordLabelGlobal" xml:space="preserve">
+    <value>Contraseña</value>
+  </data>
+  <data name="EmailAddressPlaceHolderGlobal" xml:space="preserve">
+    <value>ejemplo@gmail.com</value>
+  </data>
+  <data name="PasswordPlaceHolderGlobal" xml:space="preserve">
+    <value>Ingrese la contraseña</value>
+  </data>
+  <data name="SignUpButtonLocal" xml:space="preserve">
+    <value>Iniciar sesión</value>
+  </data>
+  <data name="LogOutButtonLocal" xml:space="preserve">
+    <value>Cerrar sesión</value>
+  </data>
+  <data name="ClientsLabelGlobal" xml:space="preserve">
+    <value>Clients</value>
+  </data>
+  <data name="SearchClientByRFCPlaceHolderGlobal" xml:space="preserve">
+    <value>Buscar cliente por RFC </value>
+  </data>
+  <data name="PersonalDataLabelGlobal" xml:space="preserve">
+    <value>Información personal</value>
+  </data>
+  <data name="ContactDataLabelGlobal" xml:space="preserve">
+    <value>Datos de contacto</value>
+  </data>
+  <data name="AlternativePhoneNumberLabelGlobal" xml:space="preserve">
+    <value>Número de teléfono alternativo</value>
+  </data>
+  <data name="PhoneNumberLabelGlobal" xml:space="preserve">
+    <value>Número de teléfono</value>
+  </data>
+  <data name="PhoneNumberPlaceHolderGlobal" xml:space="preserve">
+    <value>1234567890</value>
+  </data>
+  <data name="AddressLabelGlobal" xml:space="preserve">
+    <value>Dirección</value>
+  </data>
+  <data name="StreetLabelGlobal" xml:space="preserve">
+    <value>Calle</value>
+  </data>
+  <data name="StreetPlaceHolderGlobal" xml:space="preserve">
+    <value>Calle 123</value>
+  </data>
+  <data name="NeighborhoodLabelGlobal" xml:space="preserve">
+    <value>Colonia</value>
+  </data>
+  <data name="NeighborhoodPlaceHolderGlobal" xml:space="preserve">
+    <value>Colonia centro</value>
+  </data>
+  <data name="CityLabelGlobal" xml:space="preserve">
+    <value>Ciudad</value>
+  </data>
+  <data name="CityPlaceHolderGlobal" xml:space="preserve">
+    <value>Xalapa</value>
+  </data>
+  <data name="StateLabelGlobal" xml:space="preserve">
+    <value>Estado</value>
+  </data>
+  <data name="StatePlaceHolderGlobal" xml:space="preserve">
+    <value>Veracruz</value>
+  </data>
+  <data name="NameLabelGlobal" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="NamePlaceHolderGlobal" xml:space="preserve">
+    <value>Juan</value>
+  </data>
+  <data name="PaternalSurnameLabelGlobal" xml:space="preserve">
+    <value>Apellido paterno</value>
+  </data>
+  <data name="PaternalSurnamePlaceHolderGlobal" xml:space="preserve">
+    <value>Hernández</value>
+  </data>
+  <data name="MaternalSurnameLabelGlobal" xml:space="preserve">
+    <value>Apellido materno</value>
+  </data>
+  <data name="MaternalSurnamePlaceHolderGlobal" xml:space="preserve">
+    <value>Valdés</value>
+  </data>
+  <data name="BirthDayLabelGlobal" xml:space="preserve">
+    <value>Fecha de nacimiento</value>
+  </data>
+  <data name="DatePlaceHolderGlobal" xml:space="preserve">
+    <value>01/01/2000</value>
+  </data>
+  <data name="RFCLabelGlobal" xml:space="preserve">
+    <value>RFC</value>
+  </data>
+  <data name="RFCPlaceHolderGlobal" xml:space="preserve">
+    <value>XAXX010101000</value>
+  </data>
+  <data name="CURPLabelGlobal" xml:space="preserve">
+    <value>CURP</value>
+  </data>
+  <data name="CURPPlaceHolderGlobal" xml:space="preserve">
+    <value>AAAA111111HHZZXXZ0</value>
+  </data>
+  <data name="NextButtonGlobal" xml:space="preserve">
+    <value>Siguiente</value>
+  </data>
+  <data name="BankDepositAccountLabelGlobal" xml:space="preserve">
+    <value>Cuenta bancaria de depósitos</value>
+  </data>
+  <data name="InterBankCLABELabelGlobal" xml:space="preserve">
+    <value>CLABE interbancaria</value>
+  </data>
+  <data name="BankLabelGlobal" xml:space="preserve">
+    <value>Banco</value>
+  </data>
+  <data name="BankPlaceHolderGlobal" xml:space="preserve">
+    <value>Banco</value>
+  </data>
+  <data name="InterBankCLABEPlaceHolderGlobal" xml:space="preserve">
+    <value>XXXX-XXXX-XXXX-XXXX</value>
+  </data>
+  <data name="BankChargeAccountLabelGlobal" xml:space="preserve">
+    <value>Cuenta bancaria de cobros</value>
+  </data>
+  <data name="ReferenceContactLabelGlobal" xml:space="preserve">
+    <value>Contacto de referencia</value>
+  </data>
+  <data name="FullLastNameLabelGlobal" xml:space="preserve">
+    <value>Apellidos</value>
+  </data>
+  <data name="FullLastNamePlaceHolderGlobal" xml:space="preserve">
+    <value>Hernández Valdés</value>
+  </data>
+  <data name="RelationshipLabelGlobal" xml:space="preserve">
+    <value>Parentesco</value>
+  </data>
+  <data name="RelationshipPlaceHolderGlobal" xml:space="preserve">
+    <value>Parentesco</value>
+  </data>
+  <data name="WorkCenterLabelGlobal" xml:space="preserve">
+    <value>Centro de trabajo</value>
+  </data>
+  <data name="WorkCenterPlaceHolderGlobal" xml:space="preserve">
+    <value>Independiente</value>
+  </data>
+  <data name="WorkCenterRoleLabelGlobal" xml:space="preserve">
+    <value>Puesto</value>
+  </data>
+  <data name="WorkCenterRolePlaceHolderGlobal" xml:space="preserve">
+    <value>Asesor</value>
+  </data>
+  <data name="HiringDateLabelGlobal" xml:space="preserve">
+    <value>Fecha de contratación</value>
+  </data>
+  <data name="MontlyIncomeLabelGlobal" xml:space="preserve">
+    <value>Ingresos mensuales</value>
+  </data>
+  <data name="MoneyPlaceHolderGlobal" xml:space="preserve">
+    <value>$1000.00</value>
+  </data>
+  <data name="CreditDetailsLabelGlobal" xml:space="preserve">
+    <value>Detalles de crédito</value>
+  </data>
+  <data name="LoanAmountLabelGlobal" xml:space="preserve">
+    <value>Monto solicitado</value>
+  </data>
+  <data name="PromotionLabelGlobal" xml:space="preserve">
+    <value>Promoción</value>
+  </data>
+  <data name="PromotionPlaceHolderGlobal" xml:space="preserve">
+    <value>Promoción</value>
+  </data>
+  <data name="PaymentFrecuencyLabelGlobal" xml:space="preserve">
+    <value>Frecuencia de pago</value>
+  </data>
+  <data name="PaymentFrecuencyPlaceHolderGlobal" xml:space="preserve">
+    <value>Frecuencia de pago</value>
+  </data>
+  <data name="LoanTermLabelGlobal" xml:space="preserve">
+    <value>Plazo</value>
+  </data>
+  <data name="LoanTermPlaceHolderGlobal" xml:space="preserve">
+    <value>00</value>
+  </data>
+  <data name="InteresRateLabelGlobal" xml:space="preserve">
+    <value>Tasa de interés (%)</value>
+  </data>
+  <data name="InteresRatePlaceHolderGlobal" xml:space="preserve">
+    <value>00.00</value>
+  </data>
+  <data name="DocumentationLabelGlobal" xml:space="preserve">
+    <value>Documentación</value>
+  </data>
+  <data name="INELabelGlobal" xml:space="preserve">
+    <value>INE</value>
+  </data>
+  <data name="ProofOfAddressLabelGlobal" xml:space="preserve">
+    <value>Comprobante de domicilio</value>
+  </data>
+  <data name="AccountStatementCoverPageLabelGlobal" xml:space="preserve">
+    <value>Carátula de estado de cuenta</value>
+  </data>
+  <data name="CreditApplicationLabelGlobal" xml:space="preserve">
+    <value>Solicitud de crédito</value>
+  </data>
+  <data name="GenerateApplicationButtonLocal" xml:space="preserve">
+    <value>Generar solicitud</value>
+  </data>
+  <data name="EditButtonGlobal" xml:space="preserve">
+    <value>Editar</value>
+  </data>
+  <data name="SaveButtonGlobal" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="CancelButtonGlobal" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="AddButtonGlobal" xml:space="preserve">
+    <value>Agregar</value>
+  </data>
+</root>

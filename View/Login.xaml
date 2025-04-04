@@ -1,0 +1,163 @@
+﻿<Window x:Class="Independiente.View.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Independiente.View"
+        xmlns:vm="clr-namespace:Independiente.ViewModel"
+        xmlns:p="clr-namespace:Independiente.Properties"
+        xmlns:conv="clr-namespace:Independiente.Converters"
+        mc:Ignorable="d"
+        Title="Login"
+        Height="400"
+        Width="300">
+
+
+    <Window.DataContext>
+        <vm:LoginViewModel />
+    </Window.DataContext>
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/View/ViewResources/Styles.xaml" />
+
+            </ResourceDictionary.MergedDictionaries>
+            <conv:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+        </ResourceDictionary>
+
+    </Window.Resources>
+
+    <Grid Background="#363636">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="34*" />
+            <RowDefinition Height="317.033" />
+            <RowDefinition Height="33*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="215.719" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+
+
+
+        <Label Content="{x:Static p:Resources.FinancialNameLabelGlobal}"
+               Foreground="{StaticResource TitleWhiteColor}"
+               FontWeight="Bold"
+               FontSize="14"
+               HorizontalAlignment="Center"
+               Margin="0,10,0,0"
+               Grid.Row="1"
+               VerticalAlignment="Top"
+               HorizontalContentAlignment="Stretch"
+               Width="216"
+               Grid.Column="1" />
+
+        <Label Content="{x:Static p:Resources.WelcomeGreetingLabelLocal}"
+               Foreground="{StaticResource TitleWhiteColor}"
+               FontWeight="Bold"
+               FontSize="12"
+               HorizontalAlignment="Center"
+               Margin="0,33,0,0"
+               Grid.Row="1"
+               VerticalAlignment="Top"
+               Width="216"
+               Grid.Column="1" />
+        <Grid Grid.Column="1"
+              HorizontalAlignment="Center"
+              Height="95"
+              Grid.Row="1"
+              VerticalAlignment="Top"
+              Width="196"
+              Margin="0,164,0,0">
+
+
+
+            <Label Content="{x:Static p:Resources.PasswordLabelGlobal}"
+                   Foreground="{StaticResource TitleWhiteColor}"
+                   FontWeight="Bold"
+                   FontSize="11"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Width="170" />
+            <PasswordBox x:Name="PasswordPasswordBox"
+                         Width="196"
+                         Style="{StaticResource PasswordBoxWithPlaceholderStyle}"
+                         Margin="0,27,0,0"
+                         VerticalAlignment="Top"
+                         Tag="{x:Static p:Resources.PasswordPlaceHolderGlobal}"
+                         Visibility="{Binding IsPasswordVisible, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=true}" />
+            <TextBox 
+                     Style="{StaticResource TextBoxWithPlaceholderStyle}"
+                     Margin="0,27,0,0"
+                     TextWrapping="Wrap"
+                     Width="196"
+                     VerticalAlignment="Top"
+                     Tag="{x:Static p:Resources.PasswordPlaceHolderGlobal}"
+                     Visibility="{Binding IsPasswordVisible, Converter={StaticResource BoolToVisibilityConverter}}"
+                     Text="{Binding Password, Mode=TwoWay}" />
+            <Button 
+                    Width="18"
+                    Height="18"
+                    Style="{DynamicResource IconButtonStyle}"
+                    Tag="{DynamicResource ShowIcon}"
+                    Foreground="{StaticResource IconBlackColor}"
+                    Margin="176,31,2,46"
+                    Command="{Binding ShowPasswordCommand}"
+                    Visibility="{Binding IsPasswordVisible, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=true}" />
+            <Button 
+                    Width="18"
+                    Height="18"
+                    Style="{DynamicResource IconButtonStyle}"
+                    Tag="{DynamicResource HideIcon}"
+                    Foreground="{StaticResource IconBlackColor}"
+                    Margin="176,31,2,46"
+                    Command="{Binding HidePasswordCommand}"
+                    Visibility="{Binding IsPasswordVisible, Converter={StaticResource BoolToVisibilityConverter}}" />
+
+
+        </Grid>
+
+        <Grid Grid.Column="1"
+              HorizontalAlignment="Center"
+              Height="95"
+              Margin="0,72,0,0"
+              Grid.Row="1"
+              VerticalAlignment="Top"
+              Width="196">
+
+            <Label Content="{x:Static p:Resources.EmailAddressLabelGlobal}"
+                   Foreground="{StaticResource TitleWhiteColor}"
+                   FontWeight="Bold"
+                   FontSize="11"
+                   Width="170"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top" />
+
+            <TextBox 
+                     Style="{StaticResource TextBoxWithPlaceholderStyle}"
+                     Margin="0,30,0,0"
+                     TextWrapping="Wrap"
+                     Width="195"
+                     VerticalAlignment="Top"
+                     Tag="{x:Static p:Resources.EmailAddressPlaceHolderGlobal}"
+                     Text="{Binding EmailAddress}" />
+
+        </Grid>
+        <Button Grid.Column="1"
+                Content="{x:Static p:Resources.SignUpButtonLocal}"
+                Style="{DynamicResource MainButtonStyle}"
+                Margin="0,269,0,0"
+                Grid.Row="1"
+                VerticalAlignment="Top"
+                Width="135"
+                Height="30"
+                Command="{Binding LoginCommand}"
+                Cursor="" />
+
+    </Grid>
+</Window>
