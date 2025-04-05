@@ -17,7 +17,8 @@ namespace Independiente.Model
 
         public string Surname { get; set; }
 
-        public string BirthDate { get; set; }
+        public DateTime? BirthDate { get; set; }
+
 
         public string RFC { get; set; }
 

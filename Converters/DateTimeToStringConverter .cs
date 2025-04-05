@@ -7,27 +7,24 @@ using System.Threading.Tasks;
 using System.Windows.Data;
 using System.Windows;
 
+
 namespace Independiente.Converters
 {
-    public class BoolToVisibilityConverter : IValueConverter
+    public class DateTimeToStringConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            bool boolValue = (bool)value;
-
-            if (parameter != null && bool.TryParse(parameter.ToString(), out bool invert) && invert)
-            {
-                boolValue = !boolValue;
-            }
-
-            return boolValue ? Visibility.Visible : Visibility.Collapsed;
+            if (value is DateTime dt)
+                return dt.ToString("dd/MM/yyyy"); 
+            return string.Empty;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return (Visibility)value == Visibility.Visible;
+            if (DateTime.TryParse(value as string, out var dt))
+                return dt;
+            return null;
         }
     }
-
 
 }

@@ -118,7 +118,8 @@ namespace Independiente.ViewModel
             {
                 IsNextSuccessful = true;
                 RequestClose?.Invoke(this, EventArgs.Empty);
-            } else
+            } 
+            else
             {
 
                 IDialogService dialogService = new DialogService();

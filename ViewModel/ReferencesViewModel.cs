@@ -4,7 +4,6 @@ using Independiente.Services;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Resources;
@@ -14,30 +13,29 @@ using System.Windows.Input;
 
 namespace Independiente.ViewModel
 {
-    public class FinancialDataViewModel : INotifyPropertyChanged
+    internal class ReferencesViewModel : INotifyPropertyChanged
     {
-        public ObservableCollection<Bank> BanksList { get; set; }
-        private Bank _selectedBankCharge;
+        public Reference FirstReference { get; set; }
 
-        private Bank _selectedBankDeposit;
+        public Reference SecondReference { get; set; }
 
-        public FinancialData FinancialData { get; set; }
+        public WorkCenter WorkCenter { get; set; }
+
+
+        private List<string> _statesList;
+        private string _selectedState;
 
         private bool _isReadOnlyMode { get; set; }
 
-        public bool _isViewMode { get; set; }
+        private bool _isViewMode { get; set; }
 
-        public bool _isUpdateMode { set; get; }
+        private bool _isUpdateMode { set; get; }
 
         public PageMode Mode { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         public event EventHandler RequestClose;
-        public bool IsNextSuccessful;
-
-        
-
 
         public ICommand NextCommand { get; set; }
         public ICommand EditCommand { get; set; }
@@ -45,22 +43,20 @@ namespace Independiente.ViewModel
         public ICommand CancelCommand { get; set; }
         public ICommand SaveCommand { get; set; }
 
-        public FinancialDataViewModel()
+        public bool IsNextSuccessful;
+
+        public ReferencesViewModel()
         {
-            BanksList = new ObservableCollection<Bank>
-                {
-                    new Bank { BankId = 1, Name = "Banco A" },
-                    new Bank { BankId = 2, Name = "Banco B" },
-                    new Bank { BankId = 3, Name = "Banco C" },
-                };
             NextCommand = new RelayCommand(Next, CanNext);
             EditCommand = new RelayCommand(Edit, CanNext);
             CancelCommand = new RelayCommand(Cancel, CanNext);
             SaveCommand = new RelayCommand(Save, CanNext);
-            FinancialData = new FinancialData();
+            FirstReference = new Reference();
+
+            SecondReference = new Reference();
+            IsNextSuccessful = false;
 
         }
-
 
 
 
@@ -87,7 +83,9 @@ namespace Independiente.ViewModel
         }
         private void Next(object obj)
         {
-            if (FinancialData != null)
+            Console.WriteLine(FirstReference.Name);
+            
+            if (FirstReference.Name != null && FirstReference.Name.Length > 0)
             {
                 IsNextSuccessful = true;
                 RequestClose?.Invoke(this, EventArgs.Empty);
@@ -110,13 +108,12 @@ namespace Independiente.ViewModel
 
         private void Save(object obj)
         {
-            Console.WriteLine("guardaste");
+
             SwitchMode(PageMode.View);
         }
 
         private void Edit(object obj)
         {
-            Console.WriteLine("vas a editar");
 
             SwitchMode(PageMode.Update);
         }
@@ -130,6 +127,15 @@ namespace Independiente.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
+        public List<string> StatesList
+        {
+            get => _statesList;
+            set
+            {
+                _statesList = value;
+                OnPropertyChanged(nameof(StatesList));
+            }
+        }
 
         public bool IsReadOnlyMode
         {
@@ -160,25 +166,16 @@ namespace Independiente.ViewModel
                 OnPropertyChanged(nameof(IsUpdateMode));
             }
         }
-
-
-        public Bank SelectedBankCharge
+        public string SelectedState
         {
-            get => _selectedBankCharge;
+            get => _selectedState;
             set
             {
-                _selectedBankCharge = value;
-                OnPropertyChanged(nameof(SelectedBankCharge));
-            }
-        }
-
-        public Bank SelectedBankDeposit
-        {
-            get => _selectedBankDeposit;
-            set
-            {
-                _selectedBankDeposit = value;
-                OnPropertyChanged(nameof(SelectedBankDeposit));
+                if (_selectedState != value)
+                {
+                    _selectedState = value;
+                    OnPropertyChanged(nameof(SelectedState));
+                }
             }
         }
     }

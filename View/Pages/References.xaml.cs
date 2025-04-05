@@ -17,29 +17,31 @@ using System.Windows.Shapes;
 namespace Independiente.View.Pages
 {
     /// <summary>
-    /// Lógica de interacción para FinancialData.xaml
+    /// Lógica de interacción para References.xaml
     /// </summary>
-    public partial class FinancialData : Page
+    public partial class References : Page
     {
-        FinancialDataViewModel _financialDataViewModel;
-        public FinancialData(PageMode mode)
+        private ReferencesViewModel _referencesViewModel;
+        public References(PageMode mode)
         {
             InitializeComponent();
 
 
-            _financialDataViewModel = new FinancialDataViewModel();
-            _financialDataViewModel.SwitchMode(mode);
-            this.DataContext = _financialDataViewModel;
-            _financialDataViewModel.RequestClose += ViewModel_RequestClose;
+            _referencesViewModel = new ReferencesViewModel();
+            _referencesViewModel.SwitchMode(mode);
+
+            _referencesViewModel.RequestClose += ViewModel_RequestClose;
+            this.DataContext = _referencesViewModel;
         }
 
         private void ViewModel_RequestClose(object sender, EventArgs e)
         {
-            if (_financialDataViewModel.IsNextSuccessful)
+            if (_referencesViewModel.IsNextSuccessful)
             {
-                this.NavigationService.Navigate(new References(PageMode.View));
+               
+                this.NavigationService.Navigate(new FinancialData(PageMode.View));
+                
             }
         }
-
     }
 }
