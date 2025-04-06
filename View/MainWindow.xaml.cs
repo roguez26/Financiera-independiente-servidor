@@ -74,6 +74,7 @@ namespace Independiente
                         return new CreditDetails(viewModel);
                     }
 
+
                     throw new ArgumentException("ViewModel desconocido");
                 });
 
