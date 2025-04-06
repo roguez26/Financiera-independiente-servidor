@@ -59,20 +59,37 @@
     <Compile Include="Converters\BoolToVisibilityConverter .cs" />
     <Compile Include="Converters\DateTimeToStringConverter .cs" />
     <Compile Include="Converters\EmptyStringToVisibilityConverter.cs" />
+    <Compile Include="Model\Account.cs" />
+    <Compile Include="Model\AddressData.cs" />
     <Compile Include="Model\Bank.cs" />
     <Compile Include="Model\Client.cs" />
-    <Compile Include="Model\FinancialData.cs" />
+    <Compile Include="Model\CreditApplication.cs" />
     <Compile Include="Model\PersonalData.cs" />
+    <Compile Include="Model\PromotionalOffer.cs" />
     <Compile Include="Model\Reference.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Model\WorkCenter.cs" />
+    <Compile Include="Properties\PaymentFrecuencies.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PaymentFrecuencies.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Relationships.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relationships.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\States.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>States.resx</DependentUpon>
     </Compile>
     <Compile Include="Services\DialogService.cs" />
+    <Compile Include="Services\FileManagerService.cs" />
+    <Compile Include="Services\NavegationService.cs" />
     <Compile Include="Services\SessionService.cs" />
+    <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="ViewModel\CreditDetailsViewModel.cs" />
     <Compile Include="ViewModel\FinancialDataViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
@@ -80,6 +97,9 @@
     <Compile Include="ViewModel\ReferencesViewModel.cs" />
     <Compile Include="View\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\CreditDetails.xaml.cs">
+      <DependentUpon>CreditDetails.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Pages\FinancialData.xaml.cs">
       <DependentUpon>FinancialData.xaml</DependentUpon>
@@ -106,6 +126,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\Pages\CreditDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Pages\FinancialData.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -145,6 +169,14 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Properties\PaymentFrecuencies.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>PaymentFrecuencies.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Relationships.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Relationships.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
